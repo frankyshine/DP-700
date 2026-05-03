@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.54\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU05\",\"version\":\"5.54\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"allowChangeFilterTypes\":true,\"useCrossReportDrillthrough\":true,\"pagesPosition\":1,\"useEnhancedTooltips\":true,\"useDefaultAggregateDisplayName\":false},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU05",
+            "path": "BaseThemes/CY24SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "f115804ac36b6dc1cb66",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5586c167ded60a503b94\",\"layouts\":[{\"id\":0,\"position\":{\"x\":316.75517853620045,\"y\":103.43026237916749,\"z\":0,\"width\":811.281120536595,\"height\":523.6157032945354}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(fact_sale.Profit)\"}],\"Category\":[{\"queryRef\":\"dimension_city.SalesTerritory\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_sale\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dimension_city\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0},\"Name\":\"Sum(fact_sale.Profit)\",\"NativeReferenceName\":\"Sum of Profit\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"SalesTerritory\"},\"Name\":\"dimension_city.SalesTerritory\",\"NativeReferenceName\":\"SalesTerritory\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 523.62,
+          "width": 811.28,
+          "x": 316.76,
+          "y": 103.43,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+table dimension_date
+	lineageTag: 404752e3-3437-409d-85b7-cb0a23dbdeeb
+	sourceLineageTag: [dbo].[dimension_date]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 18f5768a-a535-4212-9d80-a0837905f5c1
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 83bfc6df-6470-4070-a87e-cdf685e86ac1
+		sourceLineageTag: DayNumber
+		summarizeBy: none
+		sourceColumn: DayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bc05c19d-13c1-4ac0-abc8-6c48cfc10f21
+		sourceLineageTag: Day
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: de185321-7c10-4c39-8780-c0129e99528b
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortMonth
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8d259fe6-9d9b-4bd2-bdf2-1b6e47ff92e4
+		sourceLineageTag: ShortMonth
+		summarizeBy: none
+		sourceColumn: ShortMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7f4f2a93-c49d-4b2c-bc43-b469a9d939c7
+		sourceLineageTag: CalendarMonthNumber
+		summarizeBy: none
+		sourceColumn: CalendarMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5e707e28-0745-4d2d-b34e-7425aa7cdabd
+		sourceLineageTag: CalendarMonthLabel
+		summarizeBy: none
+		sourceColumn: CalendarMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2936ce7b-4807-459d-8f48-647ba81636ae
+		sourceLineageTag: CalendarYear
+		summarizeBy: none
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYearLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 21b90b77-2c38-4c8f-bad7-98cb706d5c29
+		sourceLineageTag: CalendarYearLabel
+		summarizeBy: none
+		sourceColumn: CalendarYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cf5a6f1d-3cf5-4019-9343-f761a3c6ca7f
+		sourceLineageTag: FiscalMonthNumber
+		summarizeBy: none
+		sourceColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5bfd155f-01a3-47e3-8e13-dcba56dfac80
+		sourceLineageTag: FiscalMonthLabel
+		summarizeBy: none
+		sourceColumn: FiscalMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7858c293-d219-4cb4-b6e3-07db34724594
+		sourceLineageTag: FiscalYear
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearLabel
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 958df366-cef8-4fad-90c9-24593cbfd62a
+		sourceLineageTag: FiscalYearLabel
+		summarizeBy: none
+		sourceColumn: FiscalYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISOWeekNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8f261161-74be-490d-b8da-e46f2da99ff1
+		sourceLineageTag: ISOWeekNumber
+		summarizeBy: none
+		sourceColumn: ISOWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_date = entity
+		mode: directLake
+		source
+			entityName: dimension_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

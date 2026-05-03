@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "dfl_GetProductData",
+  "queryGroups": [],
+  "documentLocale": "en-GB",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "572b672b-609b-45a7-913f-5dfa60266695",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "products": {
+      "queryId": "a0113c65-cba2-4d5c-bade-7fb1e69ebf03",
+      "queryName": "products",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"6802a87c-9083-4fca-9f73-17bce61eca54\",\"DatasourceId\":\"f242d783-cc7a-4d91-b03b-0c6664ccb7a4\"}"
+    },
+    {
+      "path": "https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"6802a87c-9083-4fca-9f73-17bce61eca54\",\"DatasourceId\":\"0f265432-5e56-42f0-904c-97591716c774\"}"
+    }
+  ]
+}

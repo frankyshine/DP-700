@@ -1,0 +1,176 @@
+{
+  "schema_version": 74,
+  "tiles": [
+    {
+      "id": "d87833bc-6c25-43f4-b865-0f5f2ee2c00b",
+      "title": "Bikes and Docks",
+      "visualType": "stackedbar",
+      "pageId": "ab35a8d7-a328-46e0-9665-b9a999229edb",
+      "layout": {
+        "x": 1,
+        "y": 0,
+        "width": 12,
+        "height": 12
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "58d014a9-82f7-4ebc-99ae-e724bf5690e4"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "seriesColors": {},
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "Neighbourhood",
+        "yColumns": [
+          "No_Bikes",
+          "No_Empty_Docks"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "a13386b3-9625-4835-941f-f70c45229370",
+      "title": "Bike Locations",
+      "visualType": "map",
+      "pageId": "ab35a8d7-a328-46e0-9665-b9a999229edb",
+      "layout": {
+        "x": 13,
+        "y": 0,
+        "width": 11,
+        "height": 12
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "363ebb8c-e1a0-4755-9c1e-8fcd75fe40f5"
+      },
+      "visualOptions": {
+        "map__latitudeColumn": "Latitude",
+        "map__longitudeColumn": "Longitude",
+        "map__labelColumn": "Neighbourhood",
+        "map__sizeColumn": "No_Bikes",
+        "map__sizeDisabled": false,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    }
+  ],
+  "baseQueries": [
+    {
+      "id": "c2e7a8fe-b992-4aa4-8597-0ffce7d131ea",
+      "queryId": "660a20bc-9dbc-42d1-940c-fe2593172373",
+      "variableName": "base_bike_data"
+    }
+  ],
+  "parameters": [
+    {
+      "kind": "string",
+      "id": "b220ecbb-3f8a-4dd3-abec-bc4e713e2619",
+      "displayName": "Neighbourhood",
+      "description": "",
+      "variableName": "selected Neighbourhood",
+      "selectionType": "scalar",
+      "includeAllOption": true,
+      "defaultValue": {
+        "kind": "all"
+      },
+      "dataSource": {
+        "kind": "query",
+        "columns": {
+          "value": "Neighbourhood"
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "2433922e-f2ee-4a2d-821b-820be10ec4c9"
+        }
+      },
+      "showOnPages": {
+        "kind": "selection",
+        "pageIds": [
+          "ab35a8d7-a328-46e0-9665-b9a999229edb"
+        ]
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "kind": "kusto-trident",
+      "clusterUri": "",
+      "name": "dp700-2",
+      "databaseArtifactId": "1042e506-ac07-46c5-8f86-2ecfa3d88958",
+      "database": "a3d88958-2ecf-8f86-46c5-ac071042e506",
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "id": "07b9cb11-2d5c-42cc-a60a-67e21b5aed35"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "ab35a8d7-a328-46e0-9665-b9a999229edb"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "07b9cb11-2d5c-42cc-a60a-67e21b5aed35"
+      },
+      "text": "  base_bike_data\r\n | project Neighbourhood, latest_observation, No_Bikes, No_Empty_Docks\r\n | order by Neighbourhood asc",
+      "id": "58d014a9-82f7-4ebc-99ae-e724bf5690e4",
+      "usedVariables": [
+        "base_bike_data"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "07b9cb11-2d5c-42cc-a60a-67e21b5aed35"
+      },
+      "text": " base_bike_data\r\n | project Neighbourhood, latest_observation, No_Bikes, Latitude, Longitude\r\n | order by Neighbourhood asc",
+      "id": "363ebb8c-e1a0-4755-9c1e-8fcd75fe40f5",
+      "usedVariables": [
+        "base_bike_data"
+      ]
+    },
+    {
+      "id": "660a20bc-9dbc-42d1-940c-fe2593172373",
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "07b9cb11-2d5c-42cc-a60a-67e21b5aed35"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\n\n ['Bicycle-data']\n     | where ingestion_time() between (ago(30min) .. now())\n       and (isempty(['selected Neighbourhood']) or Neighbourhood  in (['selected Neighbourhood']))\n     | summarize latest_observation = arg_max(ingestion_time(), *) by Neighbourhood",
+      "usedVariables": [
+        "selected Neighbourhood"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "07b9cb11-2d5c-42cc-a60a-67e21b5aed35"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\n\n['Bicycle-data']\n  | distinct Neighbourhood\n  | order by Neighbourhood asc",
+      "id": "2433922e-f2ee-4a2d-821b-820be10ec4c9",
+      "usedVariables": []
+    }
+  ]
+}

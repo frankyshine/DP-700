@@ -1,0 +1,617 @@
+[
+  {
+    "uniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9",
+    "payload": {
+      "name": "Package delivery sample",
+      "type": "samples"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "19a09b7f-3a0c-4dfe-b8bc-3be7c2f19747",
+    "payload": {
+      "name": "Package delivery",
+      "runSettings": {
+        "startTime": "2026-05-01T00:18:27.5058882Z",
+        "stopTime": "2026-05-15T02:18:25.882Z"
+      },
+      "version": "V2_0",
+      "type": "PackageShipment",
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      }
+    },
+    "type": "simulatorSource-v1"
+  },
+  {
+    "uniqueIdentifier": "d063f512-f282-4627-9410-aacd7e701c43",
+    "payload": {
+      "name": "Package delivery events",
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"SourceEventStep\",\"id\":\"636fd65e-ec8e-4e5e-9e72-c39a99fe4c7c\",\"rows\":[{\"name\":\"SourceSelector\",\"kind\":\"SourceReference\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"19a09b7f-3a0c-4dfe-b8bc-3be7c2f19747\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5",
+    "payload": {
+      "name": "Package",
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "07c0dcbe-5c53-41f1-92a8-fa4acdeef797",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"IdPartStep\",\"id\":\"868ba862-55b5-426f-b766-f5bfc9a9b1e0\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "0298009f-85e4-410a-93d9-8205ba32745d",
+    "payload": {
+      "name": "PackageId tuple",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"IdStructureStep\",\"id\":\"cf6af4ca-2e84-470f-af31-b8fb853e8508\",\"rows\":[{\"name\":\"IdPart\",\"kind\":\"IdPart\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"07c0dcbe-5c53-41f1-92a8-fa4acdeef797\"}],\"name\":\"idPart\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "0f09d8d9-e139-4555-b7dc-b0a022ddcaee",
+    "payload": {
+      "name": "Delivery events",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"SplitEventStep\",\"id\":\"fea333d1-da71-4594-9342-9fcf47154506\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"d063f512-f282-4627-9410-aacd7e701c43\"}],\"name\":\"event\"}]},{\"name\":\"FieldIdMapping\",\"kind\":\"FieldIdMapping\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"PackageId\"},{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"07c0dcbe-5c53-41f1-92a8-fa4acdeef797\"}],\"name\":\"idPart\"}]},{\"name\":\"SplitEventOptions\",\"kind\":\"EventOptions\",\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "d2f6abcf-8f77-4b04-9bb6-f9a4d1a13078",
+    "payload": {
+      "name": "Current city",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"e23f609e-9a95-4d77-88d6-30682aab792e\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"City\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"1ba2b4ab-a95a-4840-8a73-326cf580b9ba\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "071a7b1d-76ea-4048-8557-8c949baf4367",
+    "payload": {
+      "name": "Delivery attempts",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"24f4f759-47c7-4e90-86c4-eb1bed21fa59\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"DeliveryAttempts\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"7f19b8bd-d0b3-417d-8c2a-006c5b5b1759\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "9699552d-1ab7-40b6-a4c2-c8e9b522cd87",
+    "payload": {
+      "name": "Delivery status",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"37827ba5-830b-4f22-8a03-467d6e81b627\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"DeliveryState\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"a3f570fd-bdbf-4ae0-89c8-ee4014e9184a\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "becf24f3-18b2-439f-b022-6d6ae82d3b82",
+    "payload": {
+      "name": "Exception reason",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"fdd339d5-a42f-488c-bc8a-552de2c49878\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Exception\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"233edb49-58b4-4f05-a3cb-4ffb2f71f624\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "c12c8333-120b-4924-9fed-7fa5443cc109",
+    "payload": {
+      "name": "Hours in delivery",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"e1dae411-cbcf-44f6-a8b3-780dd88fcfc7\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"DeliveryAttemptHours\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"d8a42126-aae8-49ce-ac41-8bab41bea039\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "c7823f5f-ef1c-4ff9-8a1d-08f7668facdb",
+    "payload": {
+      "name": "Humidity",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"543589f1-9698-4009-a833-a7f1d553149f\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Humidity\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"cffc9e24-5d84-45bf-b736-1aab9b315236\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "169e252a-d49f-4ac4-a9eb-593b62c1ddcf",
+    "payload": {
+      "name": "Recipient email",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"dffe85a5-3b73-4c24-acbf-163e1650eac3\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"RecipientEmail\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"90122cd5-6b0f-4957-bfe8-b410f2b34598\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "e4fe6289-2ecf-40b9-b7ca-f086d6b0c5fa",
+    "payload": {
+      "name": "Special care contents",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"456ef1e8-a81e-4a5f-bfd6-53bd1f090772\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"SpecialCare\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"edde7afa-4edb-4e1a-b077-99941d998143\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "3f08176d-0200-45f3-bc80-94f4bb17e6c8",
+    "payload": {
+      "name": "Temperature (°C)",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"EventSelectStep\",\"id\":\"c1178088-0a37-4b39-b091-0eebef24ab7d\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]},{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Temperature\"}]}]},{\"name\":\"EventComputeStep\",\"id\":\"2af3ced3-fc6c-4ca4-9c8a-ff77519678b5\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "91f1b11d-2f8b-400e-9f75-88939ba69ba8",
+    "payload": {
+      "name": "Express shipping requested",
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"EventTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"FieldsDefaultsStep\",\"id\":\"f5ed30ea-f65e-454a-a0e1-af954e192e24\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"d063f512-f282-4627-9410-aacd7e701c43\"}],\"name\":\"event\"}]}]},{\"name\":\"EventDetectStep\",\"id\":\"67481130-d6c8-47fa-ba1e-0395fac3957f\",\"rows\":[{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"___type\"}]},{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"express_shipping_request\"}]}]},{\"name\":\"ActStep\",\"id\":\"d8487201-f88f-4984-aee1-554695279ec2\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Express shipping requested\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Express shipping was just requested for this package.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "701f6cba-5cb7-47c0-bf66-513e412a79d6",
+    "payload": {
+      "name": "Package created",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"EventTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"FieldsDefaultsStep\",\"id\":\"7e98f391-94c6-4432-a7fd-0834d2c7aea5\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0f09d8d9-e139-4555-b7dc-b0a022ddcaee\"}],\"name\":\"event\"}]}]},{\"name\":\"EventDetectStep\",\"id\":\"527d0b6c-2dc6-488c-ad68-8a5e31a5979c\",\"rows\":[{\"name\":\"EventFieldSelector\",\"kind\":\"EventField\",\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"___type\"}]},{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"package_created\"}]}]},{\"name\":\"ActStep\",\"id\":\"348b59dd-878e-40c5-a304-6ed20286795e\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package created\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This package was just created.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "0544a128-1f59-4217-b7d9-0f8e60efb9a8",
+    "payload": {
+      "name": "Delivered",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"9cdac457-951b-414a-a44f-80b0a3b95c7c\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9699552d-1ab7-40b6-a4c2-c8e9b522cd87\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"2f6dc11a-48bf-41d4-8df4-2a59cc8d2730\",\"rows\":[{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"DeliveryAttemptSuccess\"}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"a1c14400-3fa1-48e3-995a-94b0e51eac11\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"169e252a-d49f-4ac4-a9eb-593b62c1ddcf\"}]}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package delivered\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This package was just delivered successfully.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "1c382ac7-790a-4d90-9916-146abb1a4655",
+    "payload": {
+      "name": "Delivery failed",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"bde980d2-68e6-49b7-88e6-1f5d8322fbe7\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9699552d-1ab7-40b6-a4c2-c8e9b522cd87\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"54dcf526-3761-40d2-b8b4-cbef270a877e\",\"rows\":[{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"DeliveryAttemptFailure\"}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"fa33a6f1-d814-4685-a4e7-fe31996e11fe\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package delivery failed\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This package had a failed delivery attempt. An attempt will be made on the next business day.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "f14c8007-5a8c-44f9-a2e5-cd4830452337",
+    "payload": {
+      "name": "Picked up",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"ee6d9846-b280-40b9-8052-3756260b2bdd\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"9699552d-1ab7-40b6-a4c2-c8e9b522cd87\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"93e2f07c-78dc-43c6-bdf3-d430c849429a\",\"rows\":[{\"name\":\"TextChanges\",\"kind\":\"TextChanges\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"ChangesTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"InTransit\"}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"bbc829b8-7e5f-4ec1-be6e-d8871d29eb54\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package picked up\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This package was just picked up for delivery.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "cfd3f260-427c-4aec-869e-5ccd3b73dca6",
+    "payload": {
+      "name": "Above average for Seattle",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"37a9b621-4722-4346-bf75-4e071431e126\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c12c8333-120b-4924-9fed-7fa5443cc109\"}],\"name\":\"attribute\"}]},{\"name\":\"NumberSummary\",\"kind\":\"NumberSummary\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Average\"},{\"kind\":\"TimeDrivenWindowSpec\",\"type\":\"complex\",\"arguments\":[{\"name\":\"width\",\"type\":\"timeSpan\",\"value\":3600000.0},{\"name\":\"hop\",\"type\":\"timeSpan\",\"value\":3600000.0}],\"name\":\"window\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"641c42d6-09d1-459f-a129-6e4f321b2a8b\",\"rows\":[{\"name\":\"NumberBecomes\",\"kind\":\"NumberBecomes\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"BecomesGreaterThan\"},{\"name\":\"value\",\"type\":\"number\",\"value\":1.0}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"DimensionalFilterStep\",\"id\":\"a9c419e8-6d13-47c8-90ca-30b791e0001a\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"d2f6abcf-8f77-4b04-9bb6-f9a4d1a13078\"}],\"name\":\"attribute\"}]},{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Seattle\"}]}]},{\"name\":\"ActStep\",\"id\":\"9cf1b63a-f173-4449-9449-7917e3449aa4\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package delivery time above average for Seattle\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The delivery time of this package is now above average for Seattle.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "4b597cb0-884a-4335-b16c-c4190b86bae1",
+    "payload": {
+      "name": "Outside allowed range",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"807df279-e9c8-4177-9e67-2a3906a3de4a\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c7823f5f-ef1c-4ff9-8a1d-08f7668facdb\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"29a4e495-82ab-480f-95ca-0d6f9cf06e17\",\"rows\":[{\"name\":\"NumberRangeCondition\",\"kind\":\"NumberRangeCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsOutsideRange\"},{\"name\":\"low\",\"type\":\"number\",\"value\":30.0},{\"name\":\"includeLow\",\"type\":\"boolean\",\"value\":true},{\"name\":\"high\",\"type\":\"number\",\"value\":60.0},{\"name\":\"includeHigh\",\"type\":\"boolean\",\"value\":true}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"c9565698-927f-4374-82fc-b3067c02ea6e\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package humidity is either too high or too low\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The humidity of this package has crossed above or below the allowed range.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "e5fce836-a0ea-4e81-9ec6-a9d5701b922f",
+    "payload": {
+      "name": "Too hot for medicine",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"989e4a76-55da-4d80-871a-f012fcb8019d\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"3f08176d-0200-45f3-bc80-94f4bb17e6c8\"}],\"name\":\"attribute\"}]},{\"name\":\"NumberSummary\",\"kind\":\"NumberSummary\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Average\"},{\"kind\":\"TimeDrivenWindowSpec\",\"type\":\"complex\",\"arguments\":[{\"name\":\"width\",\"type\":\"timeSpan\",\"value\":600000.0},{\"name\":\"hop\",\"type\":\"timeSpan\",\"value\":600000.0}],\"name\":\"window\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"7273bfb4-0bb6-4c6b-8201-f441a60ec4ac\",\"rows\":[{\"name\":\"NumberBecomes\",\"kind\":\"NumberBecomes\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"BecomesGreaterThan\"},{\"name\":\"value\",\"type\":\"number\",\"value\":20.0}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"DimensionalFilterStep\",\"id\":\"cd2313ce-e25d-4f1c-a32f-518a5b8b559a\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e4fe6289-2ecf-40b9-b7ca-f086d6b0c5fa\"}],\"name\":\"attribute\"}]},{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Medicine\"}]}]},{\"name\":\"ActStep\",\"id\":\"9924d572-3622-4cad-bf63-7a6fb0277a3c\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package too hot for medicine\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This temperature-sensitive package containing medicine has exceeded the allowed threshold.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "91c1056d-cefd-4c80-a723-3662d7241955",
+    "payload": {
+      "name": "Too cold for plants",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"f780da4f-58fe-4565-9db3-f60b923b0ca5\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"3f08176d-0200-45f3-bc80-94f4bb17e6c8\"}],\"name\":\"attribute\"}]},{\"name\":\"NumberSummary\",\"kind\":\"NumberSummary\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Average\"},{\"kind\":\"TimeDrivenWindowSpec\",\"type\":\"complex\",\"arguments\":[{\"name\":\"width\",\"type\":\"timeSpan\",\"value\":600000.0},{\"name\":\"hop\",\"type\":\"timeSpan\",\"value\":600000.0}],\"name\":\"window\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"e06287b1-704a-45a5-a68d-67af4ee87d20\",\"rows\":[{\"name\":\"NumberBecomes\",\"kind\":\"NumberBecomes\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"BecomesLessThan\"},{\"name\":\"value\",\"type\":\"number\",\"value\":5.0}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"DimensionalFilterStep\",\"id\":\"5d92ac28-2520-460c-8498-2002bbecd458\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e4fe6289-2ecf-40b9-b7ca-f086d6b0c5fa\"}],\"name\":\"attribute\"}]},{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Plants\"}]}]},{\"name\":\"ActStep\",\"id\":\"56332a64-bba7-4423-be1c-59ff4308f674\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package too cold for plants\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This temperature-sensitive package containing plants has dropped below the allowed threshold.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "38297b33-57c2-4739-8bc0-2bdcdcbb3dfe",
+    "payload": {
+      "name": "Weather",
+      "parentObject": {
+        "targetUniqueIdentifier": "35cc4ed8-ef67-4375-8275-a1e71817f5a5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"eba14164-db5d-43cb-8151-e7fe9f30a1b1\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"becf24f3-18b2-439f-b022-6d6ae82d3b82\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"1867f250-7dca-45dc-855c-00dbb3d6dec5\",\"rows\":[{\"name\":\"TextValueCondition\",\"kind\":\"TextValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Weather\"}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"cb2c8a93-8a5b-44d9-afe7-a2c2ac25055d\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Package delivery failed due to weather.\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"This package could not be delivered due to weather delays.\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9",
+    "payload": {
+      "name": "Redmond Packages",
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "c6c31f7f-9dfb-464c-a10e-0c125ce5ad53",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"a8b81131-a5a6-4362-80a0-8d3fadf01e27\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "98b01aa3-42fa-464c-882f-b9f4074d8634",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"596a5ac9-d9ac-4626-a5f2-4d93658f7a9c\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c6c31f7f-9dfb-464c-a10e-0c125ce5ad53\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "cfb4e0bf-c901-4558-9b78-fdb7eb486740",
+    "payload": {
+      "name": "Package delivery events",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"28527816-a04a-4261-a2ce-ab57c93ab71d\",\"name\":\"SplitEventStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"d063f512-f282-4627-9410-aacd7e701c43\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"PackageId\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c6c31f7f-9dfb-464c-a10e-0c125ce5ad53\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"FieldIdMapping\",\"name\":\"FieldIdMapping\"},{\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}],\"kind\":\"EventOptions\",\"name\":\"SplitEventOptions\"}]}],\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "30894dee-5c9c-42aa-b722-c0421ca55ae4",
+    "payload": {
+      "name": "City",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"9aa4ff07-f1b9-4874-9c00-68d86108e284\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"cfb4e0bf-c901-4558-9b78-fdb7eb486740\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"City\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"92e9c91b-36df-4be8-af09-9b9ebd368c54\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "8aa847ab-42b6-4fee-bca4-795d987f96dc",
+    "payload": {
+      "name": "ColdChainType",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"d8888820-1495-48c3-acfa-77ea277a0745\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"cfb4e0bf-c901-4558-9b78-fdb7eb486740\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"ColdChainType\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"e9847d96-7d6c-44f7-96ef-37052a3c7ee6\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "2d53cbbf-4dd8-4b5d-a1b2-1a09b6837214",
+    "payload": {
+      "name": "SpecialCare",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"6ea11dfe-6549-4dbf-b0d0-3787d2d96af6\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"cfb4e0bf-c901-4558-9b78-fdb7eb486740\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"SpecialCare\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"4b401408-f79a-453a-9966-0131592c6e06\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "c77460bd-f79a-451f-925f-16b30aa1a01d",
+    "payload": {
+      "name": "Temperature",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"368839c5-e8bc-4a9c-93cd-0d77a35e621c\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"cfb4e0bf-c901-4558-9b78-fdb7eb486740\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"Temperature\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"551cf3eb-adc7-4ea2-b9e1-e58d6b5ac057\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Number\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.2.5\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "61e162c3-3d7b-43b5-9f56-b7f5ffaa23bb",
+    "payload": {
+      "name": "Temperature alert",
+      "parentObject": {
+        "targetUniqueIdentifier": "b3aa36d4-c19d-4060-8581-5c25a69591a9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "49ef1f8f-d142-4adc-be0f-ed2a6def92a9"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"steps\":[{\"id\":\"f2198e41-421f-4089-896a-d031761b2a6b\",\"name\":\"ScalarSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c77460bd-f79a-451f-925f-16b30aa1a01d\"}],\"kind\":\"AttributeReference\",\"name\":\"attribute\",\"type\":\"complex\"}],\"kind\":\"Attribute\",\"name\":\"AttributeSelector\"}]},{\"id\":\"d2a8479e-3d48-40cc-9b48-8e250f1df6cf\",\"name\":\"ScalarDetectStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"BecomesGreaterThan\"},{\"name\":\"value\",\"type\":\"number\",\"value\":20}],\"kind\":\"NumberBecomes\",\"name\":\"NumberBecomes\"},{\"arguments\":[],\"kind\":\"EachTime\",\"name\":\"OccurrenceOption\"}]},{\"id\":\"9f5ceac4-c81c-4140-b773-90cf08494d80\",\"name\":\"DimensionalFilterStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"30894dee-5c9c-42aa-b722-c0421ca55ae4\"}],\"kind\":\"AttributeReference\",\"name\":\"attribute\",\"type\":\"complex\"}],\"kind\":\"Attribute\",\"name\":\"AttributeSelector\"},{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Redmond\"}],\"kind\":\"TextValueCondition\",\"name\":\"TextValueCondition\"}]},{\"id\":\"b7184744-5870-49d0-bfff-dac4e12859ca\",\"name\":\"DimensionalFilterStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"2d53cbbf-4dd8-4b5d-a1b2-1a09b6837214\"}],\"kind\":\"AttributeReference\",\"name\":\"attribute\",\"type\":\"complex\"}],\"kind\":\"Attribute\",\"name\":\"AttributeSelector\"},{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Medicine\"}],\"kind\":\"TextValueCondition\",\"name\":\"TextValueCondition\"}]},{\"id\":\"87882571-2e5d-42f9-9607-3e8bebc1f91e\",\"name\":\"DimensionalFilterStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"8aa847ab-42b6-4fee-bca4-795d987f96dc\"}],\"kind\":\"AttributeReference\",\"name\":\"attribute\",\"type\":\"complex\"}],\"kind\":\"Attribute\",\"name\":\"AttributeSelector\"},{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsEqualTo\"},{\"name\":\"value\",\"type\":\"string\",\"value\":\"Refrigerated\"}],\"kind\":\"TextValueCondition\",\"name\":\"TextValueCondition\"}]},{\"id\":\"f5af1022-fdd1-4ad6-93c2-ad5cb6181acb\",\"name\":\"ActStep\",\"rows\":[{\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"sentTo\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"frankbanin@noblesbisystems.onmicrosoft.com\"}]},{\"name\":\"copyTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"bCCTo\",\"type\":\"array\",\"values\":[]},{\"name\":\"subject\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Activator alert Temperature alert\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The condition for 'Temperature alert' has been met\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"name\":\"string\",\"type\":\"string\",\"value\":\"DS shit hit the fan\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"c77460bd-f79a-451f-925f-16b30aa1a01d\"}],\"kind\":\"AttributeReference\",\"type\":\"complex\"},{\"name\":\"string\",\"type\":\"string\",\"value\":\" \"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[{\"arguments\":[{\"name\":\"name\",\"type\":\"string\",\"value\":\"SpecialCare\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"2d53cbbf-4dd8-4b5d-a1b2-1a09b6837214\"}],\"kind\":\"AttributeReference\",\"name\":\"reference\",\"type\":\"complexReference\"}],\"kind\":\"NameReferencePair\",\"type\":\"complex\"},{\"arguments\":[{\"name\":\"name\",\"type\":\"string\",\"value\":\"ColdChainType\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"8aa847ab-42b6-4fee-bca4-795d987f96dc\"}],\"kind\":\"AttributeReference\",\"name\":\"reference\",\"type\":\"complexReference\"}],\"kind\":\"NameReferencePair\",\"type\":\"complex\"}]}],\"kind\":\"EmailMessage\",\"name\":\"EmailBinding\"}]}],\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.2.5\"}",
+        "settings": {
+          "shouldRun": true,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]
